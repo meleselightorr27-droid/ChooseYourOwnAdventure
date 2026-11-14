@@ -1,12 +1,16 @@
 import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Choose Your Own Adventure</Text>
+      <Image
+         source={require('../../../assets/images/knights.jpg')}
+        style={styles.image}
+       />
+      <Text style={styles.text}>The Knight's Journey Home</Text>
        <Link href="/about" style={styles.button}>
-        Go to About screen
+        A Choose Your Own Adventure Story
       </Link>
     </View>
   );
@@ -20,11 +24,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+   image: {
+    width: '90%',         
+    height: 180,          
+    borderRadius: 12,    
+    resizeMode: 'cover', 
+  },
   text: {
     color: '#4a28aa',
+    fontSize: 25,
   },
     button: {
-    fontSize: 20,
+    fontSize: 15,
     textDecorationLine: 'underline',
     color: '#fff',
   },
